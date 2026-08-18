@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nepal Premier League</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="shortcut icon" type="image/png" href="assets/NPLLogo.jpg">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: lightgray;
+        }
+
+        .stats-container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #000000;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        th, td {
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        th {
+            background: black;
+            color: white;
+        }
+
+        .player-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="assets/NPLLogo.jpg" alt="Logo"></a>
+        </div>
+        <div class="follow-us">
+            <h4>Follow us</h4>
+            <a href="https://www.instagram.com/officialnplt20/profilecard/?igsh=MWQ4YmhiY3pjMWt4YQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@officialnplt20?si=GuzBCHmQbulXNwYh" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/OfficialNPLT20?mibextid=LQQJ4d" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fixtures.html">Fixtures</a></li>
+            <li><a href="pointstable.html">Points Table</a></li>
+            <li><a href="teams.html">Teams</a></li>
+            <li><a href="stats.html">Stats</a></li>
+        </ul>
+    </nav>
+
+    <!-- Stats Section -->
+    <div class="stats-container">
+        <h1 style="text-align:center; color:#002366;">NPL 2025 STATS</h1>
+        <div class ="stats-section">
+            <h2>Top 5 Highest Run Scorers</h2>
+            <div class="table-wrapper">
+                <div class="RUNS">
+                <table>
+                    <tr>
+                        <th>Photo</th><th>Player Name</th><th>Team</th><th>Runs</th><th>Average Score</th><th>Strike Rate</th>
+                    </tr>
+                    <tr>
+                        <td><img src="player1.jpg" class="player-img"></td><td>M Watt</td><td>KAY</td><td>147</td><td>73.50</td><td>196.0</td>
+                    </tr>
+                    <tr>
+                        <td><img src="player2.jpg" class="player-img"></td><td>RS Bopara</td><td>CHR</td><td>118</td><td>59.0</td><td>129.67</td>
+                    </tr>
+                    <tr>
+                        <td><img src="player3.jpg" class="player-img"></td><td>Lokesh Bam</td><td>BIK</td><td>114</td><td>38.0</td><td>135.71</td>
+                    </tr>
+                    <tr>
+                        <td><img src="player4.jpg" class="player-img"></td><td>K Bhurtel</td><td>POA</td><td>112</td><td>56.00</td><td>177.77</td>
+                    </tr>
+                    <tr>
+                        <td><img src="player5.jpg" class="player-img"></td><td>A Tripathi</td><td>KAG</td><td>105</td><td>26.25</td><td>90.51</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            <h2>Top 5 Highest Wicket Takers</h2>
+            <div class="table-wrapper">
+                <div class="Wickets">
+                <table>
+                    <tr>
+                        <th>Photo</th><th>Player Name</th><th>Team</th><th>Wickets</th><th>BBI</th>
+                    </tr>
+                    <tr>
+                        <td><img src="player1.jpg" class="player-img"></td><td>S Lammichhane</td><td>BIK</td><td>7</td><td>4/11</td>
+                    </tr>
+                    <tr>
+                        <td><img src="player2.jpg" class="player-img"></td><td>Harmeet S</td><td>SPR</td><td>6</td><td>2/19</td>
+                    </tr>
+                    <tr>
+                        <td><img src="player3.jpg" class="player-img"></td><td>Sompal K</td><td>KAY</td><td>6</td><td>3/32</td>
+                    </tr>
+                    <tr>
+                        <td><img src="player4.jpg" class="player-img"></td><td>Karan KC</td><td>KAG</td><td>6</td><td>4/30</td>
+                    </tr>
+                    <tr>
+                        <td><img src="player5.jpg" class="player-img"></td><td>R Trumpelmann</td><td>LUL</td><td>5</td><td>3/23</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            <h2>Four Scorers</h2>
+            <div class="table-wrapper">
+                <div class="Fours">
+                <table>
+                    <tr>
+                        <th>Photo</th><th>Player Name</th><th>Team</th><th>Fours</th>
+                    </tr>
+                    <tr>
+                        <td><img src="fours.jpg" class="player-img"></td><td>K Bhurtel</td><td>POA</td><td>9</td>
+                    </tr>
+                    <tr>
+                        <td><img src="fours.jpg" class="player-img"></td><td>A Tripathi</td><td>KAG</td><td>9</td>
+                    </tr>
+                    <tr>
+                        <td><img src="fours.jpg" class="player-img"></td><td>PK Panchal</td><td>KAY</td><td>8</td>
+                    </tr>
+                    <tr>
+                        <td><img src="fours.jpg" class="player-img"></td><td>BG Charlesworth</td><td>KAG</td><td>8</td>
+                    </tr>
+                    <tr>
+                        <td><img src="fours.jpg" class="player-img"></td><td>HG Munsey</td><td>BIK</td><td>8</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            <h2>Six Scorers</h2>
+            <div class="table-wrapper">
+                <div class="Sixes">
+                <table>
+                    <tr>
+                        <th>Photo</th><th>Player Name</th><th>Team</th><th>Sixes</th>
+                    </tr>
+                    <tr>
+                        <td><img src="sixes.jpg" class="player-img"></td><td>M Watt</td><td>KAY</td><td>14</td>
+                    </tr>
+                    <tr>
+                        <td><img src="sixes.jpg" class="player-img"></td><td>L Bam</td><td>BIK</td><td>10</td>
+                    </tr>
+                    <tr>
+                        <td><img src="sixes.jpg" class="player-img"></td><td>K Bhurtel</td><td>POA</td><td>8</td>
+                    </tr>
+                    <tr>
+                        <td><img src="sixes.jpg" class="player-img"></td><td>PK Panchal</td><td>KAY</td><td>7</td>
+                    </tr>
+                    <tr>
+                        <td><img src="sixes.jpg" class="player-img"></td><td>Harmeet S</td><td>SPR</td><td>7</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            <h2>Total Team Runs</h2>
+            <div class="table-wrapper">
+                <div class="TeamRuns">
+                <table>
+                    <tr>
+                        <th>Team</th><th>Total Runs</th><th>Matches</th>
+                    </tr>
+                    <tr>
+                        <td>Sudurpaschim Royals</td><td>479</td><td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Karnali Yaks</td><td>421</td><td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Kathmandu Gorkhas</td><td>383</td><td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Biratnagar Kings</td><td>355</td><td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Pokhara Avengers</td><td>342</td><td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Chitwan Rhinos</td><td>313</td><td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Lumbini Lions</td><td>302</td><td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Janakpur Bolts</td><td>256</td><td>2</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section  -->
+    <footer class="footer">
+          <div class="footer-container">
+          <!-- Column 1: Brand / About -->
+           <div class="footer-col">
+            <h3 class="footer-title">Nepal Premier League</h3>
+            <p class="footer-text">
+                Hub for Nepal Premier League 2025 | fixtures, points table,
+                stats and team details. Built with passion for Nepali cricket.
+            </p>
+          </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fixtures.html">Fixtures</a></li>
+                <li><a href="pointstable.html">Points Table</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="stats.html">Stats</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Follow & Contact -->
+        <div class="footer-col">
+            <h4 class="footer-title">Stay Connected</h4>
+            <p class="footer-text">Follow official NPL accounts for live updates:</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/officialnplt20/profilecard/?igsh=MWQ4YmhiY3pjMWt4YQ==" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@officialnplt20?si=GuzBCHmQbulXNwYh" target="_blank" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/OfficialNPLT20?mibextid=LQQJ4d" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+            <p class="footer-text small">
+                Designed & developed by <strong>ERAA4IT</strong>.
+            </p>
+          </div>
+        </div>
+
+       <div class="footer-bottom">
+        <span>&copy; 2025 Nepal Premier League. All rights reserved.</span>
+       </div>
+    </footer>
+
+    <!-- Chat Popup Box -->
+    <div id="chatBox" class="chat-popup">
+        <div class="chat-header">Support Chat</div>
+        <p>Hello! How can we help you?</p>
+    </div>
+
+    <!-- Circular Chat Button -->
+    <div class="chat-button" onclick="toggleChat()">
+        <i class="fa-solid fa-message"></i>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const box = document.getElementById("chatBox");
+            box.style.display = (box.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

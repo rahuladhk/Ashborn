@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nepal Premier League</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+        <link rel="shortcut icon" type="image/png" href="assets/NPLLogo.jpg">
+    <link rel="stylesheet" href="style.css">
+
+<style>
+        .main-content {
+        width: 90%;
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 0 16px;
+        font-family: Arial, sans-serif;
+        margin-top: 100px;
+    }
+</style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html"><img src="assets/NPLLogo.jpg" alt="Logo"></a>
+        </div>
+        <!-- Follow Us Section -->
+        <div class="follow-us">
+            <h4>Follow us</h4>
+            <a href="https://www.instagram.com/officialnplt20/profilecard/?igsh=MWQ4YmhiY3pjMWt4YQ==" target="_blank">
+                <i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@officialnplt20?si=GuzBCHmQbulXNwYh" target="_blank">
+                <i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/OfficialNPLT20?mibextid=LQQJ4d" target="_blank">
+                <i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fixtures.html">Fixtures</a></li>
+            <li><a href="pointstable.html">Points Table</a></li>
+            <li><a href="teams.html">Teams</a></li>
+            <li><a href="stats.html">Stats</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT: POINTS TABLE -->
+    <main class="main-content">
+        <section class="points-section">
+            <h1 class="points-title">Nepal Premier League 2025 – Points Table</h1>
+            <p class="points-subtitle">
+                <!-- Standings for NPL Season 2 (updated from local data file). -->
+            </p>
+
+            <div class="points-table-wrapper">
+                <table class="points-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>Matches</th>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                            <th>NRR</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id="points-body">
+                        <!-- Rows will be injected by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="points-loading" class="points-message">Loading points table...</p>
+            <p id="points-error" class="points-message error-message" style="display: none;">
+                Could not load points table. Please try again later.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer Section  -->
+    <footer class="footer">
+          <div class="footer-container">
+          <!-- Column 1: Brand / About -->
+           <div class="footer-col">
+            <h3 class="footer-title">Nepal Premier League</h3>
+            <p class="footer-text">
+                Hub for Nepal Premier League 2025 | fixtures, points table,
+                stats and team details. Built with passion for Nepali cricket.
+            </p>
+          </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fixtures.html">Fixtures</a></li>
+                <li><a href="pointstable.html">Points Table</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="stats.html">Stats</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Follow & Contact -->
+        <div class="footer-col">
+            <h4 class="footer-title">Stay Connected</h4>
+            <p class="footer-text">Follow official NPL accounts for live updates:</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/officialnplt20/profilecard/?igsh=MWQ4YmhiY3pjMWt4YQ==" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@officialnplt20?si=GuzBCHmQbulXNwYh" target="_blank" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/OfficialNPLT20?mibextid=LQQJ4d" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+            <p class="footer-text small">
+                Designed & developed by <strong>ERAA4IT</strong>.
+            </p>
+          </div>
+        </div>
+
+       <div class="footer-bottom">
+        <span>&copy; 2025 Nepal Premier League. All rights reserved.</span>
+       </div>
+    </footer>
+
+    <!-- Chat Popup Box -->
+    <div id="chatBox" class="chat-popup">
+        <div class="chat-header">Support Chat</div>
+        <p>Hello! How can we help you?</p>
+    </div>
+
+    <!-- Circular Chat Button -->
+    <div class="chat-button" onclick="toggleChat()">
+        <i class="fa-solid fa-message"></i>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const box = document.getElementById("chatBox");
+            box.style.display = (box.style.display === "block") ? "none" : "block";
+        }
+
+        // Load Season 2 points table from local JSON
+        async function loadPointsTable() {
+            const tbody = document.getElementById("points-body");
+            const loadingMsg = document.getElementById("points-loading");
+            const errorMsg = document.getElementById("points-error");
+
+            loadingMsg.style.display = "block";
+            errorMsg.style.display = "none";
+            tbody.innerHTML = "";
+
+            try {
+                // IMPORTANT: this path must match folder structure
+                const response = await fetch("data/npl2025-points.json");
+
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+
+                const data = await response.json();
+
+                loadingMsg.style.display = "none";
+
+                if (!Array.isArray(data) || data.length === 0) {
+                    errorMsg.textContent = "No points data available right now.";
+                    errorMsg.style.display = "block";
+                    return;
+                }
+
+                data.forEach(team => {
+                    const tr = document.createElement("tr");
+
+                    tr.innerHTML = `
+                        <td>${team.rank}</td>
+                        <td>${team.team}</td>
+                        <td>${team.matches}</td>
+                        <td>${team.wins}</td>
+                        <td>${team.losses}</td>
+                        <td>${team.nrr}</td>
+                        <td>${team.points}</td>
+                    `;
+
+                    tbody.appendChild(tr);
+                });
+            } catch (err) {
+                console.error("Failed to load points table:", err);
+                loadingMsg.style.display = "none";
+                errorMsg.style.display = "block";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", loadPointsTable);
+    </script>
+</body>
+</html>
