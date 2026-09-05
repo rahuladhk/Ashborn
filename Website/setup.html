@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Windows Hotspot - Setup</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            <a onclick="window.location.href='index.html'" class="home-link">
+
+                <div class="windows-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div>
+                    <h1>Windows Hotspot</h1>
+                    <p>Wireless Network Control</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            System Ready
+        </div>
+
+    </header>
+
+
+    <!-- Setup -->
+    <main class="setup-container">
+
+        <div class="setup-card">
+
+            <div class="setup-icon">
+                📡
+            </div>
+
+
+            <!-- SSID -->
+            <div class="input-group">
+
+                <label for="ssid">
+                    Enter SSID:
+                </label>
+
+                <input
+                    type="text"
+                    id="ssid"
+                    placeholder="Wi-Fi name"
+                    maxlength="32"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="input-group">
+
+                <label for="password">
+                    Enter Password:
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Wi-Fi password"
+                    maxlength="63"
+                    autocomplete="new-password"
+                >
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="button-row">
+
+                <button
+                    class="secondary-button"
+                    onclick="window.location.href='index.html'">
+                    Back
+                </button>
+
+                <button
+                    class="start-setup-button"
+                    onclick="startHotspot()">
+                    Start Hotspot
+                </button>
+
+            </div>
+
+
+            <!-- Output -->
+            <div id="setup-output"></div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        function startHotspot() {
+
+            const ssid = document.getElementById("ssid").value.trim();
+            const password = document.getElementById("password").value;
+
+            const output = document.getElementById("setup-output");
+
+
+            // Check SSID
+            if (ssid === "") {
+
+                output.textContent = "Please enter an SSID.";
+                return;
+
+            }
+
+
+            // Check password
+            if (password.length < 8) {
+
+                output.textContent =
+                    "Password must be at least 8 characters.";
+
+                return;
+
+            }
+
+
+            output.textContent = "Starting hotspot...";
+
+
+            /*
+             * Python backend will be connected here later.
+             *
+             * SSID:
+             *     ssid
+             *
+             * Password:
+             *     password
+             *
+             * Example later:
+             *
+             * fetch("/api/start-hotspot", {
+             *     method: "POST",
+             *     headers: {
+             *         "Content-Type": "application/json"
+             *     },
+             *     body: JSON.stringify({
+             *         ssid: ssid,
+             *         password: password
+             *     })
+             * });
+             */
+
+
+            console.log("SSID:", ssid);
+            console.log("Password:", password);
+
+        }
+
+    </script>
+
+</body>
+</html>
