@@ -345,6 +345,102 @@ body {
     color: #596579;
 }
 
+/* =========================
+   SETUP
+========================= */
+.setup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.setup-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    backdrop-filter: blur(15px);
+}
+
+.setup-icon {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.07);
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #4da3ff;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.secondary-button,
+.start-setup-button {
+    border: none;
+    border-radius: 9px;
+    padding: 11px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.start-setup-button {
+    background: #0078d4;
+    color: white;
+}
+
+.secondary-button:hover,
+.start-setup-button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+#setup-output {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 14px;
+}
+
 
 /* =========================
    FOOTER
