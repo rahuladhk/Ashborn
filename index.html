@@ -44,7 +44,7 @@
             <section class="hero">
                 <div class="hero-icon">📡</div>
 
-                <h2>Hotspot Control</h2>
+                <h2>Windows Networking</h2>
 
                 <p>
                     Manage your Windows mobile hotspot directly
@@ -86,7 +86,7 @@
                     </div>
 
                     <button class="action-button stop-button"
-                            onclick="stopHotspot()">
+                            onclick="stopHotspot(); scrollToOutput()">
                         Stop
                     </button>
 
@@ -105,7 +105,61 @@
                     </div>
 
                     <button class="action-button driver-button"
-                            onclick="driverInfo()">
+                            onclick="driverInfo(); scrollToOutput()">
+                        View
+                    </button>
+
+                </div>
+
+                <div class="control-card">
+
+                    <div class="card-icon driver-icon">
+                        📶
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Saved Networks</h3>
+                        <p>View your Saved wireless Networks.</p>
+                    </div>
+
+                    <button class="action-button driver-button"
+                            onclick="driverInfo(); scrollToOutput()">
+                        View
+                    </button>
+
+                </div>
+
+                <div class="control-card">
+
+                    <div class="card-icon driver-icon">
+                        🌐
+                    </div>
+
+                    <div class="card-content">
+                        <h3>IP Configuration</h3>
+                        <p>View your Network Adapter and Wireless IP Configurations.</p>
+                    </div>
+
+                    <button class="action-button driver-button"
+                            onclick="driverInfo(); scrollToOutput()">
+                        View
+                    </button>
+
+                </div>
+
+                <div class="control-card">
+
+                    <div class="card-icon driver-icon">
+                        💻
+                    </div>
+
+                    <div class="card-content">
+                        <h3>System Information</h3>
+                        <p>View Windows and computer system information.</p>
+                    </div>
+
+                    <button class="action-button driver-button"
+                            onclick="driverInfo(); scrollToOutput()">
                         View
                     </button>
 

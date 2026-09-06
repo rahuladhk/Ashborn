@@ -69,3 +69,14 @@ async function driverInfo() {
         outputStatus.textContent = "Connection failed";
     }
 }
+
+function scrollToOutput() {
+    const outputSection = document.querySelector(".output-section");
+
+    if (outputSection) {
+        outputSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
