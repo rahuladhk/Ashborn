@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,16 +10,22 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="style.css">
+
 </head>
 
+
 <body>
+
 
     <!-- Header -->
     <header class="header">
 
         <div class="logo">
-            <a onclick="window.location.href='index.html'" class="home-link">
+
+            <a
+                onclick="window.location.href='index.html'"
+                class="home-link"
+            >
 
                 <div class="windows-icon">
                     <span></span>
@@ -30,22 +38,36 @@
                     <h1>NetCore</h1>
                     <p>Wireless Network Control</p>
                 </div>
+
             </a>
+
         </div>
 
+
         <div class="status">
+
             <span class="status-dot"></span>
+
             System Ready
+
         </div>
 
     </header>
 
 
+
     <!-- Setup -->
     <main class="setup-container">
+
         <div class="setup-card">
+
+
             <div class="setup-icon">
-                📡<br>Hotspot Setup
+
+                📡<br>
+
+                Hotspot Setup
+
             </div>
 
 
@@ -68,6 +90,7 @@
             </div>
 
 
+
             <!-- Password -->
             <div class="input-group">
 
@@ -86,96 +109,270 @@
             </div>
 
 
+
             <!-- Buttons -->
             <div class="button-row">
 
                 <button
                     class="secondary-button"
-                    onclick="window.location.href='index.html'">
+                    onclick="window.location.href='index.html'"
+                >
                     Back
                 </button>
 
+
                 <button
                     class="start-setup-button"
-                    onclick="startHotspot()">
+                    onclick="startHotspot()"
+                >
                     Start Hotspot
                 </button>
 
             </div>
 
 
-            <!-- Output -->
+
+            <!-- Setup Output -->
             <div id="setup-output"></div>
+
 
         </div>
 
     </main>
 
 
-    <!-- JavaScript -->
+
+    <!-- ==========================================
+         START HOTSPOT JAVASCRIPT
+         ========================================== -->
+
     <script>
 
-        function startHotspot() {
+        async function startHotspot() {
 
-            const ssid = document.getElementById("ssid").value.trim();
-            const password = document.getElementById("password").value;
-
-            const output = document.getElementById("setup-output");
+            const output =
+                document.getElementById("setup-output");
 
 
-            // Check SSID
+            console.log(
+                "================================"
+            );
+
+            console.log(
+                "START HOTSPOT BUTTON CLICKED"
+            );
+
+            console.log(
+                "================================"
+            );
+
+
+            // ==========================================
+            // GET INPUT
+            // ==========================================
+
+            const ssid =
+                document.getElementById("ssid").value.trim();
+
+            const password =
+                document.getElementById("password").value;
+
+
+            console.log(
+                "SSID:",
+                ssid
+            );
+
+            console.log(
+                "Password received:",
+                password.length > 0
+            );
+
+
+            // ==========================================
+            // CHECK SSID
+            // ==========================================
+
             if (ssid === "") {
 
-                output.textContent = "Please enter an SSID.";
-                return;
+                output.textContent =
+                    "Please enter an SSID.";
 
+                return;
             }
 
 
-            // Check password
+            // ==========================================
+            // CHECK PASSWORD
+            // ==========================================
+
             if (password.length < 8) {
 
                 output.textContent =
                     "Password must be at least 8 characters.";
 
                 return;
+            }
+
+
+            // ==========================================
+            // STARTING
+            // ==========================================
+
+            output.textContent =
+                "Connecting to NetCore server...";
+
+
+            console.log(
+                "Sending request to Flask..."
+            );
+
+
+            // ==========================================
+            // SEND REQUEST TO FLASK
+            // ==========================================
+
+            try {
+
+                const response = await fetch(
+                    "http://127.0.0.1:5000/Start-Hotspot",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            ssid: ssid,
+
+                            password: password
+
+                        })
+                    }
+                );
+
+
+                // ==========================================
+                // SERVER RESPONSE
+                // ==========================================
+
+                console.log(
+                    "Server response received."
+                );
+
+                console.log(
+                    "HTTP Status:",
+                    response.status
+                );
+
+
+                const result =
+                    await response.json();
+
+
+                console.log(
+                    "Server data:",
+                    result
+                );
+
+
+                // ==========================================
+                // SERVER ERROR
+                // ==========================================
+
+                if (
+                    !response.ok ||
+                    !result.success
+                ) {
+
+                    output.textContent =
+                        "Server Error: " +
+                        result.error;
+
+                    return;
+                }
+
+
+                // ==========================================
+                // SUCCESS
+                // ==========================================
+
+                output.textContent =
+                    "Hotspot started successfully.";
+
+
+                console.log(
+                    "HOTSPOT STARTED SUCCESSFULLY"
+                );
+
+                console.log(
+                    "Core output:"
+                );
+
+                console.log(
+                    result.data
+                );
+
+
+                // ==========================================
+                // SAVE OUTPUT FOR INDEX.HTML
+                // ==========================================
+
+                sessionStorage.setItem(
+                    "hotspotOutput",
+                    result.data
+                );
+
+
+                console.log(
+                    "Hotspot output saved."
+                );
+
+
+                // ==========================================
+                // RETURN TO INDEX.HTML
+                // ==========================================
+
+                setTimeout(function () {
+
+                    window.location.href =
+                        "index.html#output-section";
+
+                }, 1000);
 
             }
 
 
-            output.textContent = "Starting hotspot...";
+            // ==========================================
+            // CONNECTION ERROR
+            // ==========================================
+
+            catch (error) {
+
+                console.error(
+                    "FETCH ERROR:",
+                    error
+                );
 
 
-            /*
-             * Python backend will be connected here later.
-             *
-             * SSID:
-             *     ssid
-             *
-             * Password:
-             *     password
-             *
-             * Example later:
-             *
-             * fetch("/api/start-hotspot", {
-             *     method: "POST",
-             *     headers: {
-             *         "Content-Type": "application/json"
-             *     },
-             *     body: JSON.stringify({
-             *         ssid: ssid,
-             *         password: password
-             *     })
-             * });
-             */
+                output.textContent =
+                    "Could not connect to the NetCore server.";
 
 
-            console.log("SSID:", ssid);
-            console.log("Password:", password);
+                console.log(
+                    "Make sure server.py is running."
+                );
+
+            }
 
         }
 
     </script>
 
+
 </body>
+
 </html>

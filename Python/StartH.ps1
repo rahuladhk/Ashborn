@@ -47,9 +47,8 @@ $tetheringManager = [Windows.Networking.NetworkOperators.NetworkOperatorTetherin
 
 # Configure hotspot
 $config = $tetheringManager.GetCurrentAccessPointConfiguration()
-
-$config.Ssid = "ssid"
-$config.Passphrase = "password"
+$config.Ssid="asdasdasd"
+$config.Passphrase="dasdasdasdas"
 
 AwaitAction(
     $tetheringManager.ConfigureAccessPointAsync($config)

@@ -1,6 +1,42 @@
 import subprocess
 import re
 
+def start(ssid, password):
+
+    with open('StartH.ps1', 'r', encoding='utf-8') as file:
+        powercommand = file.read()
+
+    powercommand = re.sub(
+        r'^\s*\$config\.Ssid\s*=.*$',
+        f'$config.Ssid="{ssid}"',
+        powercommand,
+        flags=re.MULTILINE
+    )
+
+    powercommand = re.sub(
+        r'^\s*\$config\.Passphrase\s*=.*$',
+        f'$config.Passphrase="{password}"',
+        powercommand,
+        flags=re.MULTILINE
+    )
+
+    with open('StartH.ps1', 'w', encoding='utf-8') as file:
+        file.write(powercommand)
+
+    result = subprocess.run(
+        'StartH.bat',
+        capture_output=True,
+        text=True,
+        shell=True
+    )
+
+    print("========== START HOTSPOT OUTPUT ==========")
+    print(result.stdout)
+    print(result.stderr)
+    print("==========================================")
+
+    return result.stdout + result.stderr
+
 def systeminfo():
     result = subprocess.run(
         ['systeminfo'],
