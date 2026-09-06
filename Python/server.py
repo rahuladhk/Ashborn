@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 from Driver_Details import driver_details
+from Stop_Hotspot import stop_hotspot
 
 app = Flask(__name__)
 
@@ -9,6 +10,15 @@ CORS(app)
 @app.route('/driver-details')
 def get_driver_details():
     result = driver_details()
+
+    return jsonify({
+        "success": True,
+        "data": result
+    })
+    
+@app.route('/Stop-Hotspot')
+def get_stop_Hotspot():
+    result = stop_hotspot()
 
     return jsonify({
         "success": True,
